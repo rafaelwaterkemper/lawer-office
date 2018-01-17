@@ -1,0 +1,22 @@
+<div class="container-fluid">
+        <div class="row justify-content-sm-center">
+            <div class="col-sm-8">
+                <h2 class="title">{{vm.title}}</h2>
+                <form>
+                    <div class="form-group">
+                        <label>Pessoa</label>
+                        <select class="form-control" ng-model="vm.record.pessoa">
+                            <option repeat="pessoa in vm.record.pessoa" value={{pessoa}}>{{pessoa.id}} - {{pessoa.nome}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="textarea" ng-model="vm.record.observacao" class="form-control">
+                    </div>
+                    <button ng-click="vm.save()" type="button" class="btn btn-primary">Salvar Registro</button>
+                    <a ui-sref="pessoa.list" class="btn btn-danger">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    

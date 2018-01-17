@@ -1,84 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Lawer Officer</title>
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
-  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-</head>
-
-<body>
-    
-  <div id="wrapper">
-    <div class="overlay"></div>
-
-    <!-- Sidebar -->
-    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
-      <ul class="nav sidebar-nav">
-        <div class="sidebar-header">
-          <div class="sidebar-brand">
-            <a href="#">Lower Officer</a>
-          </div>
-        </div>
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a ui-sref="pessoa">Pessoa</a>
-        </li>
-        <li>
-          <a href="#cliente">Cliente</a>
-        </li>
-        <li>
-          <a href="#team">Processos</a>
-        </li>
-        <li class="dropdown">
-          <a href="#works" class="dropdown-toggle" data-toggle="dropdown">Future
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu animated fadeInLeft" role="menu">
-            <div class="dropdown-header">Dropdown heading</div>
-            <li>
-              <a href="#pictures">Pictures</a>
-            </li>
-            <li>
-              <a href="#videos">Videeos</a>
-            </li>
-            <li>
-              <a href="#books">Books</a>
-            </li>
-            <li>
-              <a href="#art">Art</a>
-            </li>
-            <li>
-              <a href="#awards">Awards</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#followme">Follow me</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-      <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
-        <span class="hamb-top"></span>
-        <span class="hamb-middle"></span>
-        <span class="hamb-bottom"></span>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lawer Office</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" ui-sref="home">Lawer Office</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Mostrar navegação">
+        <span class="navbar-toggler-icon"></span>
       </button>
-  </div>
-    <!-- /#page-content-wrapper -->
-    <ui-view></ui-view>
-  </div>
-  <!-- /#wrapper -->
-  <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'></script>
-  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
-<script type="text/javascript" src="main.573ba542c5b50731c3e0.js"></script></body>
-
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" ui-sref-active="active" ui-sref="pessoa">
+            <a class="nav-link" href="#">Pessoas</a>
+          </li>
+          <li class="nav-item" ui-sref-active="active" ui-sref="cliente">
+            <a class="nav-link" href="#">Clientes</a>
+          </li>
+          <li class="nav-item" ui-sref="processo" ui-sref-active="active">
+            <a class="nav-link" href="#">Processos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="container">
+      <ui-view></ui-view>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>    
+  <script type="text/javascript" src="main.86b300e5caa4a31b72d3.js"></script></body>
 </html>
