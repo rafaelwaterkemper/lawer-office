@@ -1,11 +1,11 @@
 import AbstractCrudService from "../abstract.crud.service";
 
-export default class PessoaServico extends AbstractCrudService {
+export default class ClienteServico extends AbstractCrudService {
 
   constructor($http) {
-    super($http, 'http://localhost:8080/learnModularizado-web/lawofficer/pessoa')
+    super($http, 'http://localhost:8080/learnModularizado-web/lawofficer/cliente')
   }
 
 }
 
-PessoaServico.$inject = ['$http']
+ClienteServico.$inject = ['$http']

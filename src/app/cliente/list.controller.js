@@ -2,13 +2,13 @@ import swal from 'sweetalert2'
 
 export default class ListController {
 
-    constructor(PessoaServico, Notification) {
+    constructor(ClienteServico, Notification) {
         this.limit = 0;
         this.offset = 0;
         this.filter = 0;
         this.sort = 0;
         this.records = []
-        this._service = PessoaServico
+        this._service = ClienteServico
         this._notify = Notification
         this.load()
     }
@@ -45,4 +45,4 @@ export default class ListController {
     }
 }
 
-ListController.$inject = ['PessoaServico', 'Notification']
+ListController.$inject = ['ClienteServico', 'Notification']
