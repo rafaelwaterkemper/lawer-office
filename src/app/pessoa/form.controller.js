@@ -1,4 +1,3 @@
-var moment = require('moment');
 
 export default class FormController {
 
@@ -11,6 +10,8 @@ export default class FormController {
             this._service.findById($stateParams.id)
                 .then(data => {
                     this.record = data
+                    //TODO: adequar a situação da remoção de um dia devido ao timezone
+                    this.record.dataNascimento = new Date(data.dataNascimento)
                 })
         }
         this._state = $state
@@ -18,7 +19,6 @@ export default class FormController {
     }
 
     save() {
-        console.log("CAIUUUUUUUUUUUUU");
         this._service.save(this.record)
             .then(resp => {
                 this._notify.success('Registro salvo com sucesso!')

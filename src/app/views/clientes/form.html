@@ -5,9 +5,7 @@
                 <form>
                     <div class="form-group">
                         <label>Pessoa</label>
-                        <select class="form-control" ng-model="vm.record.pessoa">
-                            <option ng-value="vm.record.pessoa">{{vm.record.pessoa.id}} - {{vm.record.pessoa.nome}}</option>
-                            <option ng-repeat="pessoa in vm.pessoas" ng-value="pessoa">{{pessoa.id}} - {{pessoa.nome}}</option>
+                        <select class="form-control" ng-model="vm.record.pessoa" ng-options="pessoa.nome for pessoa in vm.pessoas track by pessoa.id">
                         </select>
                     </div>
                     <div class="form-group">

@@ -3,7 +3,6 @@ export default class FormController {
     constructor($stateParams, $state, ProcessoServico, Notification, ClienteServico) {
         this.record = {}
         this.clientes = [];
-        this.edit;
         this.title = 'Adicionando registro'
         this._service = ProcessoServico
         this._cliente_service = ClienteServico;
@@ -31,7 +30,6 @@ export default class FormController {
     }
 
     loadClientes() {
-        if(!this.edit){
             this._cliente_service.findAll(0, 0, 0, 0)
             .then(data => {
                 this.clientes = data
@@ -39,7 +37,6 @@ export default class FormController {
             .catch(error => {
                 console.log(error)
             })
-        }
     }
 }
 

@@ -5,10 +5,8 @@
                 <form>
                     <div class="form-group">
                         <label>Cliente</label>
-                        <select class="form-control" ng-model="vm.record.cliente">
-                            <option ng-value="vm.record.cliente">{{vm.record.cliente.id}} - {{vm.record.cliente.pessoa.nome}}</option>
-                            <option ng-repeat="cliente in vm.clientes" ng-value="cliente">{{cliente.id}} - {{cliente.pessoa.nome}}</option>
-                        </select>
+                        <select class="form-control" ng-model="vm.record.cliente" 
+                        ng-options="cliente.pessoa.nome for cliente in vm.clientes track by cliente.id"></select>
                     </div>
                     <div class="form-group">
                         <label>Honorário</label>

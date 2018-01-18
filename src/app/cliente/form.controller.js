@@ -3,7 +3,6 @@ export default class FormController {
     constructor($stateParams, $state, ClienteServico, Notification, PessoaServico) {
         this.record = {}
         this.pessoas = [];
-        this.edit;
         this.title = 'Adicionando registro'
         this._service = ClienteServico
         this._pessoa_service = PessoaServico;
@@ -31,15 +30,13 @@ export default class FormController {
     }
 
     loadPessoas() {
-        if(!this.edit){
-            this._pessoa_service.findAll(0, 0, 0, 0)
+        this._pessoa_service.findAll(0, 0, 0, 0)
             .then(data => {
                 this.pessoas = data
             })
             .catch(error => {
                 console.log(error)
             })
-        }
     }
 }
 
