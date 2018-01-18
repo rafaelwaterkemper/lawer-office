@@ -6,6 +6,7 @@ import { default as inputMasks } from 'angular-input-masks'
 import { mainConfig } from './main/config'
 import { pessoaConfig } from './pessoa/config'
 import { clienteConfig } from './cliente/config'
+import { processoConfig } from './processo/config'
 
 require('angular-i18n/angular-locale_pt-br.js')
 
@@ -16,3 +17,4 @@ var modulo = angular.module(appModule, [uiRouter, uiNotification, inputMasks])
 modulo.config(mainConfig(modulo))
       .config(pessoaConfig(modulo))
       .config(clienteConfig(modulo))
+      .config(processoConfig(modulo))
