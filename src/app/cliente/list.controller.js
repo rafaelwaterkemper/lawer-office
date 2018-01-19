@@ -3,9 +3,9 @@ import swal from 'sweetalert2'
 export default class ListController {
 
     constructor(ClienteServico, Notification) {
-        this.limit = 0;
+        this.limit = 50;
         this.offset = 0;
-        this.filter = 0;
+        this.filterValue;
         this.sort = 0;
         this.records = []
         this._service = ClienteServico
@@ -14,7 +14,7 @@ export default class ListController {
     }
 
     load() {
-        this._service.findAll(this.limit, this.offset, this.filter, this.sort)
+        this._service.findAll(this.limit, this.offset, this.filterValue, this.sort)
           .then(data => {
               this.records = data
           })

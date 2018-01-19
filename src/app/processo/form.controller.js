@@ -30,7 +30,7 @@ export default class FormController {
     }
 
     loadClientes() {
-            this._cliente_service.findAll(0, 0, 0, 0)
+            this._cliente_service.findAll(50, 0, "", 0)
             .then(data => {
                 this.clientes = data
             })

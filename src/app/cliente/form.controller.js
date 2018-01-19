@@ -30,7 +30,7 @@ export default class FormController {
     }
 
     loadPessoas() {
-        this._pessoa_service.findAll(0, 0, 0, 0)
+        this._pessoa_service.findAll(50, 0, "", 0)
             .then(data => {
                 this.pessoas = data
             })
