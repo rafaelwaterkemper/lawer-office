@@ -2,7 +2,7 @@ import swal from 'sweetalert2'
 
 export default class ListController {
 
-    constructor(PessoaServico, Notification) {
+    constructor(PessoaServico, Notification, $filter) {
         this.limit = 50;
         this.offset = 0;
         this.filterValue;
@@ -10,6 +10,7 @@ export default class ListController {
         this.records = []
         this._service = PessoaServico
         this._notify = Notification
+        this.filter = $filter;
         this.load()
     }
 
@@ -17,7 +18,9 @@ export default class ListController {
         
         this._service.findAll(this.limit, this.offset, this.filterValue, this.sort)
           .then(data => {
-              this.records = data
+              this.records = data;
+              this.records.map(data => 
+                data.dataNascimento = this.filter('date')(data.dataNascimento, 'dd/MM/yyyy'));
           })
           .catch(error => {
               console.log(error)
@@ -46,4 +49,4 @@ export default class ListController {
     }
 }
 
-ListController.$inject = ['PessoaServico', 'Notification']
+ListController.$inject = ['PessoaServico', 'Notification', '$filter']

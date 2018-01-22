@@ -1,3 +1,4 @@
+import moment from 'moment';
 
 export default class FormController {
 
@@ -10,8 +11,7 @@ export default class FormController {
             this._service.findById($stateParams.id)
                 .then(data => {
                     this.record = data
-                    //TODO: adequar a situação da remoção de um dia devido ao timezone
-                    this.record.dataNascimento = new Date(data.dataNascimento)
+                    this.record.dataNascimento = moment(data.dataNascimento).toDate();
                 })
         }
         this._state = $state
